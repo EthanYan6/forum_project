@@ -6,30 +6,35 @@
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 </head>
 <body>
-    <h1>Boards</h1>
+    <div class="container">
+        <ol class="breadcrumb my-4">
+            <li class="breadcrumb-item active">Boards</li>
+        </ol>
 
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Board</th>
-                <th>Posts</th>
-                <th>Topics</th>
-                <th>Last Post</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for board in boards %}
+        <table class="table">
+            <thead class="table-dark">
                 <tr>
-                    <td>
-                        {{ board.name }}<br>
-                        <small style="color: #888">{{ board.description }}</small>
-                    </td>
-                    <td>0</td>
-                    <td>0</td>
-                    <td></td>
+                    <th>Board</th>
+                    <th>Posts</th>
+                    <th>Topics</th>
+                    <th>Last Post</th>
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>>
+            </thead>
+            <tbody>
+                {% for board in boards %}
+                    <tr>
+                        <td>
+                            {{ board.name }}<br>
+                            <small class="text-muted d-block">{{ board.description }}</small>
+                        </td>
+                        <td class="align-middle">0</td>
+                        <td class="align-middle">0</td>
+                        <td></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
 </body>
 </html>
