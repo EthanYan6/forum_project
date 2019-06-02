@@ -3,5 +3,5 @@ from boards import views
 
 
 urlpatterns = [
-    url(r'^home/$',views.home),
+    url(r'^$', views.home, name='home'),
 ]
