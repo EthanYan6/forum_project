@@ -12,3 +12,9 @@ def home(request):
     boards_names = list()
 
     return render(request, 'home.html', {'boards': boards})
+
+def board_topics(request, pk):
+    # do something...
+    board = Board.objects.get(pk=pk)
+    return render(request, 'topics.html', {'board': board})
+

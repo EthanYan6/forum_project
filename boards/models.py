@@ -20,6 +20,7 @@ class Topic(models.Model):
     starter = models.ForeignKey(User, related_name='topics')
 
 
+
 class Post(models.Model):
     message = models.TextField(max_length=4000)
     # 设置外键,然后设置位置参数,即关联的模型在引用时用的属性名
