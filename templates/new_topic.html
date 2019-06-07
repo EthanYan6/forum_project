@@ -9,5 +9,17 @@
 {% endblock %}
 
 {% block content %}
-
+    <form method="post">
+        {% csrf_token %}
+{#        <input type="hidden" name="csrfmiddlewaretoken" value="jjG2o6aWj65YGaqzCpl0TYTg5jn6SctjzRZ9KmluifVx0IVaxlwh97YarZKs54Y32">#}
+        <div class="form-group">
+            <label for="id_subject">Subject</label>
+            <input type="text" class="form-control" id="id_subject" name="subject">
+        </div>
+        <div class="form-group">
+            <label for="id_message">Message</label>
+            <textarea class="form-control" id="id_message" name="message" rows="5"></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Post</button>
+    </form>
 {% endblock %}
