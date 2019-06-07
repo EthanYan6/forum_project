@@ -4,13 +4,9 @@ from .models import Board
 
 
 # Create your views here.
-
-
-
 def home(request):
     boards = Board.objects.all()
     boards_names = list()
-
     return render(request, 'home.html', {'boards': boards})
 
 def board_topics(request, pk):
