@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     # 添加子应用
     'boards',
+    'accounts',
 ]
 
 MIDDLEWARE = [
