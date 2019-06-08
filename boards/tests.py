@@ -4,6 +4,7 @@ from django.test import TestCase
 from django.urls import resolve
 from boards.views import home, board_topics, new_topic
 from boards.models import Board, Topic, Post
+from .forms import NewTopicForm
 
 
 class HomeTest(TestCase):
@@ -128,3 +129,22 @@ class NewTopicTests(TestCase):
         board_topics_url = reverse('board_topics', kwargs={'pk': 1})
         response = self.client.get(new_topic_url)
         self.assertContains(response, 'href="{0}"'.format(board_topics_url))
+
+    def test_contains_form(self): # <- new test
+        url = reverse('new_topic', kwargs={'pk': 1})
+        response = self.client.get(url)
+        form = response.context.get('form')
+        # 处理的是抓取的上下文的表单实例,检查它是否是一个NewTopicForm
+        self.assertIsInstance(form, NewTopicForm)
+
+    def test_new_topic_invalid_post_data(self): # <- updated this one
+        """
+        Invalid post data should not redirect
+        The expected behavior is to show the form again with validation errors
+        :return:
+        """
+        url = reverse('new_topic', kwargs={'pk': 1})
+        response = self.client.post(url, {})
+        form = response.context.get('form')
+        self.assertEquals(response.status_code, 200)
+        self.assertTrue(form.errors)
