@@ -25,6 +25,8 @@ class Topic(models.Model):
     # 创建反向关系,使得Board可以通过属性topics访问属于这个板块下的Topicl列表
     board = models.ForeignKey(Board, related_name='topics')
     starter = models.ForeignKey(User, related_name='topics')
+    # 存储的是页面的浏览量,不可能为负数
+    views = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return self.subject
