@@ -9,6 +9,7 @@ from .models import Board, Topic, Post
 from django.db.models import Count
 from django.utils.decorators import method_decorator
 from django.views.generic import ListView
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
 # def home(request):
@@ -28,7 +29,17 @@ def board_topics(request, pk):
     #     raise Http404
 
     board = get_object_or_404(Board, pk=pk)
-    topics = board.topics.order_by('-last_updated').annotate(replies=Count('posts') - 1)
+    # topics = board.topics.order_by('-last_updated').annotate(replies=Count('posts') - 1)
+    queryset = board.topics.order_by('-last_updated').annotate(replies=Count('posts')-1)
+    page = request.GET.get('page', 1)
+    paginator = Paginator(queryset, 20)
+
+    try:
+        topics = paginator.page(page)
+    except PageNotAnInteger:
+        topics = paginator.page(1)
+    except EmptyPage:
+        topics = paginator.page(paginator.num_pages)
     return render(request, 'topics.html', {'board': board, 'topics': topics})
 
 @login_required
