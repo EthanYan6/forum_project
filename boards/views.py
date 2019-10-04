@@ -8,12 +8,17 @@ from boards.forms import NewTopicForm
 from .models import Board, Topic, Post
 from django.db.models import Count
 from django.utils.decorators import method_decorator
+from django.views.generic import ListView
 
 # Create your views here.
-def home(request):
-    boards = Board.objects.all()
-    boards_names = list()
-    return render(request, 'home.html', {'boards': boards})
+# def home(request):
+#     boards = Board.objects.all()
+#     boards_names = list()
+#     return render(request, 'home.html', {'boards': boards})
+class BoardListView(ListView):
+    model = Board
+    context_object_name = 'boards'
+    template_name = 'home.html'
 
 def board_topics(request, pk):
     # do something...

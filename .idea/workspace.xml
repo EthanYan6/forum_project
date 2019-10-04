@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ed60a57-36c0-4826-b3a9-3b515de96875" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/boards/tests/test_view_edit_post.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/edit_post.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/boards/tests/test_view_home.py" afterPath="$PROJECT_DIR$/boards/tests/test_view_home.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/boards/views.py" afterPath="$PROJECT_DIR$/boards/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myproject/urls.py" afterPath="$PROJECT_DIR$/myproject/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/topic_posts.html" afterPath="$PROJECT_DIR$/templates/topic_posts.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/boards/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="100" column="59" lean-forward="false" selection-start-line="100" selection-start-column="59" selection-end-line="100" selection-end-column="59" />
+            <state relative-caret-position="380">
+              <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
               <folding>
                 <element signature="e#0#57#0" expanded="true" />
               </folding>
@@ -62,10 +60,22 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myproject/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
-              <caret line="61" column="133" lean-forward="false" selection-start-line="61" selection-start-column="133" selection-end-line="61" selection-end-column="133" />
+            <state relative-caret-position="207">
+              <caret line="25" column="43" lean-forward="false" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
               <folding>
                 <element signature="e#643#684#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_view_home.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/boards/tests/test_view_home.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="22" column="61" lean-forward="false" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -166,7 +176,6 @@
         <option value="$PROJECT_DIR$/templates/password_change_done.html" />
         <option value="$PROJECT_DIR$/accounts/tests/test_view_password_change.py" />
         <option value="$PROJECT_DIR$/templates/login.html" />
-        <option value="$PROJECT_DIR$/boards/tests/test_view_home.py" />
         <option value="$PROJECT_DIR$/boards/tests/test_views.py" />
         <option value="$PROJECT_DIR$/boards/tests/test_view_board_topics.py" />
         <option value="$PROJECT_DIR$/boards/tests/test_view_new_topic.py" />
@@ -180,11 +189,12 @@
         <option value="$PROJECT_DIR$/templates/home.html" />
         <option value="$PROJECT_DIR$/boards/models.py" />
         <option value="$PROJECT_DIR$/templates/topics.html" />
-        <option value="$PROJECT_DIR$/myproject/urls.py" />
         <option value="$PROJECT_DIR$/templates/topic_posts.html" />
         <option value="$PROJECT_DIR$/templates/edit_post.html" />
         <option value="$PROJECT_DIR$/boards/tests/test_view_edit_post.py" />
         <option value="$PROJECT_DIR$/boards/views.py" />
+        <option value="$PROJECT_DIR$/myproject/urls.py" />
+        <option value="$PROJECT_DIR$/boards/tests/test_view_home.py" />
       </list>
     </option>
   </component>
@@ -605,13 +615,6 @@
       <option name="presentableId" value="Default" />
       <updated>1558064479904</updated>
     </task>
-    <task id="LOCAL-00002" summary="添加home视图的单元测试">
-      <created>1559484514271</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1559484514271</updated>
-    </task>
     <task id="LOCAL-00003" summary="添加css文件">
       <created>1559489437136</created>
       <option name="number" value="00003" />
@@ -948,7 +951,14 @@
       <option name="project" value="LOCAL" />
       <updated>1570176632774</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="编辑帖子页面">
+      <created>1570180312670</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1570180312671</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -957,13 +967,13 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38327527" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38554215" sideWeight="0.52497095" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.270415" sideWeight="0.5296167" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.270415" sideWeight="0.47502902" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.270415" sideWeight="0.4703833" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38554215" sideWeight="0.47502902" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38554215" sideWeight="0.47502902" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -982,7 +992,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="添加js文件" />
     <MESSAGE value="给论坛页面右上角添加下拉菜单功能" />
     <MESSAGE value="完善右上角功能,在未登录的情况下显示注册或者登录" />
     <MESSAGE value="添加登录功能" />
@@ -1007,7 +1016,8 @@
     <MESSAGE value="主题回复相关" />
     <MESSAGE value="查询结果集(显示每个版块的总主题数,显示每个板块的总回复数,显示每个板块的最后发布者和日期)" />
     <MESSAGE value="显示每个板块的浏览量" />
-    <option name="LAST_COMMIT_MESSAGE" value="显示每个板块的浏览量" />
+    <MESSAGE value="编辑帖子页面" />
+    <option name="LAST_COMMIT_MESSAGE" value="编辑帖子页面" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1225,13 +1235,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/boards/tests/test_view_home.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="29" lean-forward="false" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/accounts/tests/test_view_password_reset.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -1369,22 +1372,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/boards/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/myproject/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="61" column="133" lean-forward="false" selection-start-line="61" selection-start-column="133" selection-end-line="61" selection-end-column="133" />
+        <state relative-caret-position="207">
+          <caret line="25" column="43" lean-forward="false" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
           <folding>
             <element signature="e#643#684#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/boards/views.py">
+    <entry file="file://$PROJECT_DIR$/boards/tests/test_view_home.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="100" column="59" lean-forward="false" selection-start-line="100" selection-start-column="59" selection-end-line="100" selection-end-column="59" />
+        <state relative-caret-position="418">
+          <caret line="22" column="61" lean-forward="false" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
           <folding>
-            <element signature="e#0#57#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
