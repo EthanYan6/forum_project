@@ -37,12 +37,12 @@
     </tbody>
   </table>
 
-  {% if topics.has_other_pages %}
+  {% if is_paginated %}
     <nav aria-label="Topics pagination" class="mb-4">
       <ul class="pagination">
-        {% if topics.has_previous %}
+        {% if page_obj.has_previous %}
           <li class="page-item">
-            <a class="page-link" href="?page={{ topics.previous_page_number }}">Previous</a>
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
           </li>
         {% else %}
           <li class="page-item disabled">
@@ -50,8 +50,8 @@
           </li>
         {% endif %}
 
-        {% for page_num in topics.paginator.page_range %}
-          {% if topics.number == page_num %}
+        {% for page_num in paginator.page_range %}
+          {% if page_obj.number == page_num %}
             <li class="page-item active">
               <span class="page-link">
                 {{ page_num }}
@@ -65,9 +65,9 @@
           {% endif %}
         {% endfor %}
 
-        {% if topics.has_next %}
+        {% if page_obj.has_next %}
           <li class="page-item">
-            <a class="page-link" href="?page={{ topics.next_page_number }}">Next</a>
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
           </li>
         {% else %}
           <li class="page-item disabled">

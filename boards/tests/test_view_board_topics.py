@@ -2,8 +2,8 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from django.test import TestCase
 from django.urls import resolve
-from boards.views import board_topics
-from boards.models import Board
+from ..views import  TopicListView
+from ..models import Board
 
 
 class BoardTopicsTests(TestCase):
@@ -31,7 +31,7 @@ class BoardTopicsTests(TestCase):
     def test_board_topics_url_resolves_board_topics_view(self):
         # 测试Django是否使用了正确的视图函数去渲染topics
         view = resolve('/boards/1/')
-        self.assertEquals(view.func, board_topics)
+        self.assertEquals(view.func.view_class, TopicListView)
 
     def test_board_topics_view_contains_navigation_links(self):
         board_topics_url = reverse('board_topics', kwargs={'pk': 1})

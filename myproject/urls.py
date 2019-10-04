@@ -31,7 +31,7 @@ urlpatterns = [
     name='login'),
     url(r'^logout/$', auth_views.LogoutView.as_view(), name='logout'),
     # url(r'^', include('boards.urls', namespace='bt')),
-    url(r'^boards/(?P<pk>\d+)/$', views.board_topics, name='board_topics'),
+    url(r'^boards/(?P<pk>\d+)/$', views.TopicListView.as_view(), name='board_topics'),
     url(r'^boards/(?P<pk>\d+)/new/$', views.new_topic, name='new_topic'),
     url(r'^reset/$',
         auth_views.PasswordResetView.as_view(

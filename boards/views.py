@@ -21,26 +21,41 @@ class BoardListView(ListView):
     context_object_name = 'boards'
     template_name = 'home.html'
 
-def board_topics(request, pk):
-    # do something...
-    # try:
-    #     board = Board.objects.get(pk=pk)
-    # except Board.DoesNotExist:
-    #     raise Http404
+# def board_topics(request, pk):
+#     # do something...
+#     # try:
+#     #     board = Board.objects.get(pk=pk)
+#     # except Board.DoesNotExist:
+#     #     raise Http404
+#
+#     board = get_object_or_404(Board, pk=pk)
+#     # topics = board.topics.order_by('-last_updated').annotate(replies=Count('posts') - 1)
+#     queryset = board.topics.order_by('-last_updated').annotate(replies=Count('posts')-1)
+#     page = request.GET.get('page', 1)
+#     paginator = Paginator(queryset, 20)
+#
+#     try:
+#         topics = paginator.page(page)
+#     except PageNotAnInteger:
+#         topics = paginator.page(1)
+#     except EmptyPage:
+#         topics = paginator.page(paginator.num_pages)
+#     return render(request, 'topics.html', {'board': board, 'topics': topics})
+class TopicListView(ListView):
+    model = Topic
+    context_object_name = 'topics'
+    template_name = 'topics.html'
+    paginate_by = 20
 
-    board = get_object_or_404(Board, pk=pk)
-    # topics = board.topics.order_by('-last_updated').annotate(replies=Count('posts') - 1)
-    queryset = board.topics.order_by('-last_updated').annotate(replies=Count('posts')-1)
-    page = request.GET.get('page', 1)
-    paginator = Paginator(queryset, 20)
+    def get_context_data(self, **kwargs):
+        kwargs['board'] = self.board
+        return super().get_context_data(**kwargs)
 
-    try:
-        topics = paginator.page(page)
-    except PageNotAnInteger:
-        topics = paginator.page(1)
-    except EmptyPage:
-        topics = paginator.page(paginator.num_pages)
-    return render(request, 'topics.html', {'board': board, 'topics': topics})
+    def get_queryset(self):
+        self.board = get_object_or_404(Board, pk=self.kwargs.get('pk'))
+        queryset = self.board.topics.order_by('last_updated').annotate(replies=Count('posts')-1)
+        return queryset
+
 
 @login_required
 def new_topic(request, pk):
